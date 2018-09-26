@@ -17,10 +17,10 @@ class ChatApp extends Component {
 
     componentDidMount() {
         const chatManager = new ChatManager({
-            instanceLocator: "v1:us1:4ace9fce-cceb-45a5-8e41-d08851413195",
+            instanceLocator: "INSTANCE LOCATOR",
             userId: this.props.currentId,
             tokenProvider: new TokenProvider({
-                url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/4ace9fce-cceb-45a5-8e41-d08851413195/token"
+                url: "TOKEN PROVIDER"
             })
         })
 

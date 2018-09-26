@@ -7,8 +7,8 @@ import ChatApp from './Components/ChatApp';
 const Chatkit = require("@pusher/chatkit-server");
 
 const chatkit = new Chatkit.default({
-  instanceLocator: "v1:us1:4ace9fce-cceb-45a5-8e41-d08851413195",
-  key: "5f6dcc12-f6a9-47b3-ac8e-95d0c0fa93fa:HHeggaTeK/0/TUYPyj4I5lvaL7utAZXsIa7fiXIQOO8="
+  instanceLocator: "INSTANCE LOCATOR",
+  key: "SECRET KEY"
 })
 
 
