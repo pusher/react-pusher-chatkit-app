@@ -17,49 +17,38 @@ class ChatApp extends Component {
 
     componentDidMount() {
         const chatManager = new ChatManager({
-            instanceLocator: "INSTANCE LOCATOR",
+            instanceLocator: "v1:us1:4ace9fce-cceb-45a5-8e41-d08851413195",
             userId: this.props.currentId,
             tokenProvider: new TokenProvider({
-                url: "TOKEN PROVIDER"
+                url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/4ace9fce-cceb-45a5-8e41-d08851413195/token"
             })
         })
 
         chatManager
             .connect()
             .then(currentUser => {
-                this.setState({
-                    currentUser: currentUser,
-                })
+                this.setState({ currentUser: currentUser })
 
-                return currentUser.createRoom({
-                    name: this.state.currentUser.name,
-                    private: true,
-                    addUserIds: ['Admin']
-                    })
-                    .then(room => {
-                        this.setState({
-                            currentRoom: room,
-                            users: room.userIds
-                        })
-                    })
-                    .then(room => {
-                        currentUser.subscribeToRoom({
-                            roomId: this.state.currentRoom.id,
-                            messageLimit: 100,
-                            hooks: {
-                                onNewMessage: message => {
-                                    this.setState({
-                                        messages: [...this.state.messages, message],
-                                    })
-                                },
-                            }
-                        })
-                    })
-                    .catch(err => {
-                        console.log(`Error creating room ${err}`)
-                    })
+                return currentUser.subscribeToRoom({
+                    roomId: 17181105,
+                    messageLimit: 100,
+                    hooks: {
+                        onNewMessage: message => {
+                            this.setState({
+                                messages: [...this.state.messages, message],
+                            })
+                        },
+                    }
                 })
-    }
+            })
+            .then(currentRoom => {
+                this.setState({
+                    currentRoom,
+                    users: currentRoom.userIds
+                })
+            })
+            .catch(error => console.log(error))
+        }
 
 
     addMessage(text) {
@@ -74,7 +63,7 @@ class ChatApp extends Component {
     render() {
         return (
             <div>
-                <h2 className="header">Hi There! Ask us anything</h2>
+                <h2 className="header">Let's Talk</h2>
                 <MessageList messages={this.state.messages} />
                 <Input className="input-field" onSubmit={this.addMessage} />
             </div>
