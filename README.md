@@ -1,6 +1,6 @@
 # react-pusher-chatkit-app
 
-This is a demo of a real-time chat app using React and Pusher's Chatkit. You can read about how it was created on Pusher's blog.
+This is a demo of a real-time chat app using React and Pusher's Chatkit. You can read about how it was created on [Pusher's blog](https://pusher.com/tutorials/messaging-react-chatkit).
 
 ### Prerequisites
 
