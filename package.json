@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@pusher/chatkit": "^0.7.17",
+    "@pusher/chatkit-client": "^1.0.2",
     "@pusher/chatkit-server": "^0.12.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

@@ -4,9 +4,9 @@ import ChatMessage from './Components/ChatMessage';
 import Signup from './Components/Signup';
 import ChatApp from './Components/ChatApp';
 
-const Chatkit = require("@pusher/chatkit-server");
+import { default as Chatkit } from '@pusher/chatkit-server';
 
-const chatkit = new Chatkit.default({
+const chatkit = new Chatkit({
   instanceLocator: "v1:us1:4ace9fce-cceb-45a5-8e41-d08851413195",
   key: "5f6dcc12-f6a9-47b3-ac8e-95d0c0fa93fa:HHeggaTeK/0/TUYPyj4I5lvaL7utAZXsIa7fiXIQOO8="
 })

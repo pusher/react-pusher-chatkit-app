@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ChatManager, TokenProvider } from '@pusher/chatkit';
+import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 import Input from './Input';
 import MessageList from './MessageList';
 
@@ -30,10 +30,10 @@ class ChatApp extends Component {
                 this.setState({ currentUser: currentUser })
 
                 return currentUser.subscribeToRoom({
-                    roomId: 17181105,
+                    roomId: "17181105",
                     messageLimit: 100,
                     hooks: {
-                        onNewMessage: message => {
+                        onMessage: message => {
                             this.setState({
                                 messages: [...this.state.messages, message],
                             })
