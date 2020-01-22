@@ -7,8 +7,8 @@
     "@pusher/chatkit-server": "^0.12.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
-    "snyk": "^1.189.0"
+    "react-scripts": "3.0.0",
+    "snyk": "^1.214.0"
   },
   "scripts": {
     "start": "react-scripts start",
